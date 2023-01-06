@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.musicapp.Model.UploadSong;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,6 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
@@ -182,10 +184,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         @Override
                         public void onSuccess(Uri uri) {
 
+                            UploadSong uploadSong = new UploadSong(songsCategory, title1,artist1,albumArtist1, durations1, uri.toString());
+                            String uploadId = referenceSongs.push().getKey();
+                            referenceSongs.child(uploadId).setValue(uploadSong);
+
                         }
                     });
                 }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                    double progress = (100.0 * snapshot.getBytesTransferred()/snapshot.getTotalByteCount());
+                    progressBar.setProgress((int)progress);
+                }
             });
+        }else {
+            Toast.makeText(this, "No file selected to upload", Toast.LENGTH_SHORT).show();
         }
 
     }
