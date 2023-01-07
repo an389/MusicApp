@@ -1,4 +1,4 @@
-package com.example.musicapp;
+package com.example.musicapp.Server;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,12 +25,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.musicapp.Model.UploadSong;
+import com.example.musicapp.R;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -40,7 +38,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ServerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView textViewImage;
     ProgressBar progressBar;
@@ -210,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void openAlbumUploadsActivity(View v){
-        Intent intent = new Intent(MainActivity.this, UploadAlbumActivity.class);
+        Intent intent = new Intent(ServerActivity.this, UploadAlbumActivity.class);
         startActivity(intent);
     }
 
