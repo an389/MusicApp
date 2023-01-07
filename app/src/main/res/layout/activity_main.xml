@@ -115,6 +115,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/openImageUploadActivity"
+        android:onClick="openAlbumUploadsActivity"
         android:text="open upload album activity"/>
 
 </LinearLayout>

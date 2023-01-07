@@ -208,4 +208,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(audioUri));
     }
+
+    public void openAlbumUploadsActivity(View v){
+        Intent intent = new Intent(MainActivity.this, UploadAlbumActivity.class);
+        startActivity(intent);
+    }
+
 }
