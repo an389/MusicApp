@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.musicapp.Model.AudioModel;
 import com.example.musicapp.Model.MyMediaPlayer;
-import com.example.musicapp.MusicPlayerActivity;
+import com.example.musicapp.Client.MusicPlayerActivity;
 import com.example.musicapp.R;
 
 import java.util.ArrayList;
