@@ -20,7 +20,15 @@
         android:layout_height="wrap_content"
         android:text="Music"
         android:textStyle="bold"
+        android:id="@+id/music"
         android:layout_below="@+id/uploadButton"
         android:onClick="musicActivity"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Local Music"
+        android:textStyle="bold"
+        android:layout_below="@+id/music"
+        android:onClick="loclaMusicActivity"/>
 
 </RelativeLayout>

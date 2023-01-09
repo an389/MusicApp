@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.musicapp.Client.ClientActivity;
+import com.example.musicapp.Client.LocalMusicActivity;
 import com.example.musicapp.Server.ServerActivity;
 
 public class FirstActivity extends AppCompatActivity {
@@ -24,6 +25,11 @@ public class FirstActivity extends AppCompatActivity {
 
     public void musicActivity(View view) {
         Intent intent = new Intent(FirstActivity.this, ClientActivity.class);
+        startActivity(intent);
+    }
+
+    public void loclaMusicActivity(View view) {
+        Intent intent = new Intent(FirstActivity.this, LocalMusicActivity.class);
         startActivity(intent);
     }
 }
